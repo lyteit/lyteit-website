@@ -4,15 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lyteit.com - Crypto & Finance News</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Latest cryptocurrency and financial news from trusted sources around the world">
+    
+    <!-- ===== UPDATED META TAGS WITH YOUR CUSTOM IMAGE ===== -->
+    <meta name="title" content="lyteit.com - Crypto & Finance News">
+    <meta name="description" content="Latest cryptocurrency and financial news from trusted sources around the world. Bitcoin, Ethereum, DeFi, and market analysis.">
     <meta name="keywords" content="crypto, bitcoin, ethereum, finance, news, blockchain, defi, trading, nigeria">
     <meta name="author" content="lyteit.com">
-    <meta property="og:title" content="lyteit.com - Crypto & Finance News">
+    
+    <!-- Open Graph / Facebook / WhatsApp / Telegram -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lyteit.com">
-    <meta property="og:description" content="Your trusted source for crypto and financial news">
+    <meta property="og:title" content="lyteit.com - Crypto & Finance News">
+    <meta property="og:description" content="Your trusted source for crypto and financial news. Get the latest updates from top sources.">
+    <meta property="og:image" content="https://iili.io/qqHDd0u.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="lyteit.com - Crypto & Finance News">
+    
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://lyteit.com">
+    <meta name="twitter:title" content="lyteit.com - Crypto & Finance News">
+    <meta name="twitter:description" content="Your trusted source for crypto and financial news.">
+    <meta name="twitter:image" content="https://iili.io/qqHDd0u.png">
+    <meta name="twitter:image:alt" content="lyteit.com - Crypto & Finance News">
+    
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -270,6 +286,11 @@
             border-color: #ffffff;
             color: #ffffff;
         }
+        
+        .social-icon.youtube:hover {
+            border-color: #ff0000;
+            color: #ff0000;
+        }
 
         .hamburger-menu {
             width: 40px;
@@ -303,8 +324,6 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
-        /* REMOVED: .rss-refresh-btn styles */
 
         .rss-source-badge {
             font-size: 0.65rem;
@@ -895,11 +914,22 @@
                 </div>
             </div>
 
-            <!-- NEW: LYTEIT Section -->
+            <!-- ===== UPDATED LYTEIT SECTION ===== -->
             <div class="menu-section">
                 <div class="menu-section-title">LYTEIT</div>
+                <!-- Lyteit Global Channel -->
+                <div class="menu-item" onclick="window.open('https://youtube.com/@lyteit_global?si=OiN6vYal3_se1iUV', '_blank')">
+                    <i class="ph ph-youtube-logo"></i>
+                    LyteitGlobal
+                </div>
+                <!-- Lyteit Nigeria Channel -->
+                <div class="menu-item" onclick="window.open('https://youtube.com/@lyteitnigeria?si=Ib8--pgSGlUZS9eV', '_blank')">
+                    <i class="ph ph-youtube-logo"></i>
+                    LyteitNigeria
+                </div>
+                <!-- Blog Link (using newspaper icon as requested) -->
                 <div class="menu-item" onclick="window.open('https://lyteit.blogspot.com', '_blank')">
-                    <i class="ph ph-blog"></i>
+                    <i class="ph ph-newspaper"></i>
                     Visit Blog
                 </div>
             </div>
@@ -925,7 +955,11 @@
                 </div>
 
                 <div class="header-right">
-                    <!-- X (Twitter) Icon - UPDATED LINK -->
+                    <!-- ===== ADDED YOUTUBE ICON ===== -->
+                    <a href="https://youtube.com/@lyteit_global?si=OiN6vYal3_se1iUV" target="_blank" class="social-icon youtube">
+                        <i class="ph-fill ph-youtube-logo"></i>
+                    </a>
+                    <!-- X (Twitter) Icon -->
                     <a href="https://x.com/LyteitNigeria" target="_blank" class="social-icon x">
                         <i class="ph-fill ph-x-logo"></i>
                     </a>
@@ -937,7 +971,7 @@
             </div>
         </div>
 
-        <!-- Page Indicator - REFRESH BUTTON REMOVED -->
+        <!-- Page Indicator -->
         <div class="page-indicator" id="pageIndicator">
             <i class="ph ph-house"></i> Home
         </div>
@@ -1002,7 +1036,7 @@
                     </div>
                     
                     <!-- APK Download Button -->
-                    <a href="https://github.com/lyteit/lyteit-website/releases/download/v1.0.0/lyteit.apk" 
+                    <a href="https://github.com/lyteit/lyteit-website/releases/download/v1.0.0/app3938318-hsb8df.apk" 
                        class="download-apk-btn" 
                        download>
                         <i class="ph ph-android-logo"></i>
@@ -1144,13 +1178,12 @@
             document.getElementById('nav-home').classList.toggle('active', page === 'home');
             document.getElementById('nav-explore').classList.toggle('active', page === 'explore');
             
-            // Update page indicator - REFRESH BUTTON REMOVED
+            // Update page indicator
             const indicator = document.getElementById('pageIndicator');
             if (page === 'home') {
                 indicator.innerHTML = '<i class="ph ph-house"></i> Home';
                 document.getElementById('home-page').style.display = 'block';
                 document.getElementById('explore-page').style.display = 'none';
-                // No refresh button to set up
             } else {
                 indicator.innerHTML = '<i class="ph ph-compass"></i> Explore';
                 document.getElementById('home-page').style.display = 'none';
