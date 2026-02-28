@@ -304,30 +304,7 @@
             margin: 0 auto;
         }
 
-        .rss-refresh-btn {
-            background: #1e2128;
-            border: 1px solid #333;
-            color: #fab005;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            margin-left: auto;
-            transition: all 0.2s ease;
-        }
-        
-        .rss-refresh-btn:hover:not(:disabled) {
-            border-color: #fab005;
-            background: #2a2f38;
-        }
-        
-        .rss-refresh-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
+        /* REMOVED: .rss-refresh-btn styles */
 
         .rss-source-badge {
             font-size: 0.65rem;
@@ -918,6 +895,15 @@
                 </div>
             </div>
 
+            <!-- NEW: LYTEIT Section -->
+            <div class="menu-section">
+                <div class="menu-section-title">LYTEIT</div>
+                <div class="menu-item" onclick="window.open('https://lyteit.blogspot.com', '_blank')">
+                    <i class="ph ph-blog"></i>
+                    Visit Blog
+                </div>
+            </div>
+
             <div class="menu-divider"></div>
 
             <div class="menu-footer">
@@ -939,8 +925,8 @@
                 </div>
 
                 <div class="header-right">
-                    <!-- X (Twitter) Icon -->
-                    <a href="#" class="social-icon x" onclick="showPopup('X')">
+                    <!-- X (Twitter) Icon - UPDATED LINK -->
+                    <a href="https://x.com/LyteitNigeria" target="_blank" class="social-icon x">
                         <i class="ph-fill ph-x-logo"></i>
                     </a>
                     <!-- Hamburger Menu -->
@@ -951,10 +937,9 @@
             </div>
         </div>
 
-        <!-- Page Indicator -->
+        <!-- Page Indicator - REFRESH BUTTON REMOVED -->
         <div class="page-indicator" id="pageIndicator">
             <i class="ph ph-house"></i> Home
-            <button class="rss-refresh-btn" id="refreshRSSBtn"><i class="ph ph-arrow-clockwise"></i> Refresh News</button>
         </div>
 
         <!-- Main Content Area -->
@@ -1074,9 +1059,7 @@
             { name: "Nairametrics", description: "Nigerian business and financial news.", url: "https://nairametrics.com", category: "news", icon: "ph-flag" }
         ];
 
-        // ============================================
-        // UPDATED RSS FEEDS - 10 per feed, CryptoSlate removed, your blog added
-        // ============================================
+        // RSS FEEDS - 10 per feed
         const RSS_FEEDS = [
             {
                 name: 'CoinTelegraph',
@@ -1092,7 +1075,7 @@
             },
             {
                 name: 'Lyteit Blog',
-                url: 'https://lyteit.blogspot.com/feeds/posts/default?alt=rss', // Your blog added
+                url: 'https://lyteit.blogspot.com/feeds/posts/default?alt=rss',
                 region: 'nigeria',
                 icon: 'ph-lightning'
             },
@@ -1161,13 +1144,13 @@
             document.getElementById('nav-home').classList.toggle('active', page === 'home');
             document.getElementById('nav-explore').classList.toggle('active', page === 'explore');
             
-            // Update page indicator
+            // Update page indicator - REFRESH BUTTON REMOVED
             const indicator = document.getElementById('pageIndicator');
             if (page === 'home') {
-                indicator.innerHTML = '<i class="ph ph-house"></i> Home <button class="rss-refresh-btn" id="refreshRSSBtn"><i class="ph ph-arrow-clockwise"></i> Refresh News</button>';
+                indicator.innerHTML = '<i class="ph ph-house"></i> Home';
                 document.getElementById('home-page').style.display = 'block';
                 document.getElementById('explore-page').style.display = 'none';
-                setupRefreshButton();
+                // No refresh button to set up
             } else {
                 indicator.innerHTML = '<i class="ph ph-compass"></i> Explore';
                 document.getElementById('home-page').style.display = 'none';
@@ -1176,7 +1159,7 @@
         };
 
         // ============================================
-        // RSS FUNCTIONS - UPDATED TO 10 ARTICLES PER FEED
+        // RSS FUNCTIONS
         // ============================================
         async function loadRssFeeds() {
             const newsGrid = document.getElementById('newsGrid');
@@ -1198,7 +1181,6 @@
                         const data = await response.json();
                         
                         if (data.status === 'ok' && data.items) {
-                            // UPDATED: Changed from 5 to 10 articles per feed
                             return data.items.slice(0, 10).map(item => {
                                 let image = item.thumbnail || '';
                                 if (!image && item.enclosure && item.enclosure.link) {
@@ -1233,14 +1215,14 @@
                 allRssPosts = results.flat().sort((a, b) => new Date(b.date) - new Date(a.date));
                 
                 if (allRssPosts.length === 0) {
-                    newsGrid.innerHTML = '<div class="loading">Unable to load news. Please try refreshing.</div>';
+                    newsGrid.innerHTML = '<div class="loading">Unable to load news. Please try refreshing the page.</div>';
                 } else {
                     renderNewsGrid(allRssPosts);
                 }
                 
             } catch (error) {
                 console.error('Error loading RSS feeds:', error);
-                newsGrid.innerHTML = '<div class="loading" style="color: #ff5252;">Failed to load news. Please refresh.</div>';
+                newsGrid.innerHTML = '<div class="loading" style="color: #ff5252;">Failed to load news. Please refresh the page.</div>';
             }
         }
 
@@ -1263,19 +1245,6 @@
                     </div>
                 </div>
             `).join('');
-        }
-
-        function setupRefreshButton() {
-            const refreshBtn = document.getElementById('refreshRSSBtn');
-            if (refreshBtn) {
-                refreshBtn.addEventListener('click', async () => {
-                    refreshBtn.innerHTML = '<i class="ph ph-spinner ph-spin"></i> Refreshing...';
-                    refreshBtn.disabled = true;
-                    await loadRssFeeds();
-                    refreshBtn.innerHTML = '<i class="ph ph-arrow-clockwise"></i> Refresh News';
-                    refreshBtn.disabled = false;
-                });
-            }
         }
 
         // ============================================
