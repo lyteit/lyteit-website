@@ -729,6 +729,7 @@
             transition: all 0.2s ease;
             margin-top: 20px;
             box-shadow: 0 4px 15px rgba(250, 176, 5, 0.3);
+            text-decoration: none;
         }
 
         .download-apk-btn:hover {
@@ -852,6 +853,12 @@
 
         .ph-spin {
             animation: spin 1s linear infinite;
+        }
+
+        .apk-size {
+            font-size: 0.8rem;
+            color: #8a8d91;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -1008,11 +1015,15 @@
                             <span>Google Play</span>
                         </div>
                     </div>
-                    <!-- APK Download Button (will be updated later) -->
-                    <button class="download-apk-btn" id="downloadApkBtn">
+                    
+                    <!-- APK Download Button -->
+                    <a href="https://github.com/lyteit/lyteit-website/releases/download/v1.0.0/app3938318-hsb8df.apk" 
+                       class="download-apk-btn" 
+                       download>
                         <i class="ph ph-android-logo"></i>
-                        Download APK (v1.0)
-                    </button>
+                        Download APK v1.0.0
+                    </a>
+                    <div class="apk-size">Size: 31.45 MB · Requires Android 5.0+</div>
                 </div>
             </div>
 
@@ -1063,6 +1074,9 @@
             { name: "Nairametrics", description: "Nigerian business and financial news.", url: "https://nairametrics.com", category: "news", icon: "ph-flag" }
         ];
 
+        // ============================================
+        // UPDATED RSS FEEDS - 10 per feed, CryptoSlate removed, your blog added
+        // ============================================
         const RSS_FEEDS = [
             {
                 name: 'CoinTelegraph',
@@ -1071,22 +1085,34 @@
                 icon: 'ph-lightning'
             },
             {
-                name: 'Nairametrics',
-                url: 'https://nairametrics.com/feed/',
-                region: 'nigeria',
-                icon: 'ph-flag'
-            },
-            {
-                name: 'CNBC Crypto',
-                url: 'https://www.cnbc.com/id/20409666/device/rss/rss.html',
+                name: 'Bitcoin Magazine',
+                url: 'https://bitcoinmagazine.com/feed',
                 region: 'global',
-                icon: 'ph-broadcast'
+                icon: 'ph-bitcoin-logo'
             },
             {
-                name: 'Investing.com',
-                url: 'https://www.investing.com/rss/news_25.rss',
+                name: 'Lyteit Blog',
+                url: 'https://lyteit.blogspot.com/feeds/posts/default?alt=rss', // Your blog added
+                region: 'nigeria',
+                icon: 'ph-lightning'
+            },
+            {
+                name: 'Invezz Crypto',
+                url: 'https://invezz.com/news/cryptocurrency/feed/',
                 region: 'global',
                 icon: 'ph-trend-up'
+            },
+            {
+                name: 'The Daily Hodl',
+                url: 'https://dailyhodl.com/feed/',
+                region: 'global',
+                icon: 'ph-clock'
+            },
+            {
+                name: 'CoinDesk',
+                url: 'https://feeds.feedburner.com/CoinDesk',
+                region: 'global',
+                icon: 'ph-broadcast'
             }
         ];
 
@@ -1150,7 +1176,7 @@
         };
 
         // ============================================
-        // RSS FUNCTIONS
+        // RSS FUNCTIONS - UPDATED TO 10 ARTICLES PER FEED
         // ============================================
         async function loadRssFeeds() {
             const newsGrid = document.getElementById('newsGrid');
@@ -1172,8 +1198,12 @@
                         const data = await response.json();
                         
                         if (data.status === 'ok' && data.items) {
-                            return data.items.slice(0, 5).map(item => {
+                            // UPDATED: Changed from 5 to 10 articles per feed
+                            return data.items.slice(0, 10).map(item => {
                                 let image = item.thumbnail || '';
+                                if (!image && item.enclosure && item.enclosure.link) {
+                                    image = item.enclosure.link;
+                                }
                                 if (!image && item.description) {
                                     const imgMatch = item.description.match(/<img[^>]+src="([^">]+)"/);
                                     if (imgMatch) image = imgMatch[1];
@@ -1183,7 +1213,7 @@
                                 
                                 return {
                                     title: item.title || 'No title',
-                                    content: content + '...',
+                                    content: content + (content.length >= 150 ? '...' : ''),
                                     image: image || 'https://images.unsplash.com/photo-1621761126064-fdd80772bc22?w=400',
                                     source: feed.name,
                                     region: feed.region,
@@ -1202,7 +1232,11 @@
                 const results = await Promise.all(feedPromises);
                 allRssPosts = results.flat().sort((a, b) => new Date(b.date) - new Date(a.date));
                 
-                renderNewsGrid(allRssPosts);
+                if (allRssPosts.length === 0) {
+                    newsGrid.innerHTML = '<div class="loading">Unable to load news. Please try refreshing.</div>';
+                } else {
+                    renderNewsGrid(allRssPosts);
+                }
                 
             } catch (error) {
                 console.error('Error loading RSS feeds:', error);
@@ -1212,11 +1246,6 @@
 
         function renderNewsGrid(posts) {
             const newsGrid = document.getElementById('newsGrid');
-            
-            if (posts.length === 0) {
-                newsGrid.innerHTML = '<div class="loading">No news available</div>';
-                return;
-            }
             
             newsGrid.innerHTML = posts.map(post => `
                 <div class="news-card" onclick="window.open('${post.link}', '_blank')">
@@ -1331,11 +1360,6 @@
 
             document.getElementById('playStoreBtn').addEventListener('click', () => {
                 showPopup('Google Play');
-            });
-
-            // APK Download (will be updated later)
-            document.getElementById('downloadApkBtn').addEventListener('click', () => {
-                showPopup('APK Download');
             });
 
             // Explore search
