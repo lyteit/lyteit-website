@@ -5,35 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lyteit.com - Crypto & Finance News</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Latest cryptocurrency and financial news from trusted sources around the world. Real-time prices, market analysis, and educational resources for global and Nigerian markets.">
-    <meta name="keywords" content="crypto, bitcoin, ethereum, finance, news, blockchain, defi, trading, nigeria, nairametrics, busha, cowrywise">
+    <meta name="description" content="Latest cryptocurrency and financial news from trusted sources around the world">
+    <meta name="keywords" content="crypto, bitcoin, ethereum, finance, news, blockchain, defi, trading, nigeria">
     <meta name="author" content="lyteit.com">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lyteit.com">
-    
-    <!-- Open Graph / Social Media -->
     <meta property="og:title" content="lyteit.com - Crypto & Finance News">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lyteit.com">
-    <meta property="og:description" content="Your trusted source for crypto and financial news. Real-time updates, market data, and educational resources.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1621761126064-fdd80772bc22?w=1200">
-    <meta property="og:site_name" content="lyteit.com">
-    
-    <!-- Twitter Card -->
+    <meta property="og:description" content="Your trusted source for crypto and financial news">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@LyteitNigeria">
-    <meta name="twitter:title" content="lyteit.com - Crypto & Finance News">
-    <meta name="twitter:description" content="Your trusted source for crypto and financial news">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1621761126064-fdd80772bc22?w=1200">
-    
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-    
-    <!-- Manifest for PWA -->
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#000000">
-    
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
         * {
@@ -43,56 +24,9 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        :root {
-            /* Light theme variables */
-            --light-bg: #f5f7fa;
-            --light-surface: #ffffff;
-            --light-text: #1a1e24;
-            --light-text-secondary: #4a5568;
-            --light-border: #e2e8f0;
-            --light-card: #ffffff;
-            --light-hover: #f7fafc;
-            
-            /* Dark theme variables */
-            --dark-bg: #000000;
-            --dark-surface: #15171a;
-            --dark-text: #ffffff;
-            --dark-text-secondary: #8a8d91;
-            --dark-border: #222222;
-            --dark-card: #15171a;
-            --dark-hover: #1e2128;
-            
-            /* Shared */
-            --accent: #fab005;
-            --accent-light: #fab00520;
-            --transition: all 0.3s ease;
-        }
-
-        /* Light theme */
-        body.light-theme {
-            --bg: var(--light-bg);
-            --surface: var(--light-surface);
-            --text: var(--light-text);
-            --text-secondary: var(--light-text-secondary);
-            --border: var(--light-border);
-            --card: var(--light-card);
-            --hover: var(--light-hover);
-            background: var(--bg);
-            color: var(--text);
-        }
-
-        /* Dark theme (default) */
         body {
-            --bg: var(--dark-bg);
-            --surface: var(--dark-surface);
-            --text: var(--dark-text);
-            --text-secondary: var(--dark-text-secondary);
-            --border: var(--dark-border);
-            --card: var(--dark-card);
-            --hover: var(--dark-hover);
-            background: var(--bg);
-            color: var(--text);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            background: #000;
+            color: #fff;
             overflow-x: hidden;
         }
 
@@ -113,7 +47,7 @@
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
 
         .menu-overlay.active {
@@ -127,8 +61,8 @@
             right: -320px;
             width: 300px;
             height: 100vh;
-            background: var(--surface);
-            border-left: 1px solid var(--border);
+            background: #15171a;
+            border-left: 1px solid #333;
             z-index: 1001;
             transition: right 0.3s ease;
             overflow-y: auto;
@@ -144,7 +78,7 @@
             justify-content: space-between;
             align-items: center;
             padding-bottom: 20px;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid #333;
             margin-bottom: 20px;
         }
 
@@ -154,29 +88,28 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            color: var(--text);
         }
-        .menu-logo span { color: var(--accent); }
+        .menu-logo span { color: #fab005; }
 
         .close-menu {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: var(--surface);
-            border: 1px solid var(--border);
+            background: #1c1f24;
+            border: 1px solid #333;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-secondary);
+            color: #8a8d91;
             font-size: 1.3rem;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.2s ease;
         }
 
         .close-menu:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--hover);
+            border-color: #fab005;
+            color: #fab005;
+            background: #2a2f38;
         }
 
         .menu-section {
@@ -184,7 +117,7 @@
         }
 
         .menu-section-title {
-            color: var(--accent);
+            color: #fab005;
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -197,49 +130,46 @@
             align-items: center;
             gap: 12px;
             padding: 12px 15px;
-            color: var(--text);
+            color: #fff;
             text-decoration: none;
             border-radius: 12px;
-            transition: var(--transition);
+            transition: all 0.2s ease;
             cursor: pointer;
             margin-bottom: 2px;
         }
 
         .menu-item:hover {
-            background: var(--hover);
-            color: var(--accent);
+            background: #1e2128;
+            color: #fab005;
         }
 
         .menu-item i {
-            color: var(--accent);
+            color: #fab005;
             font-size: 1.2rem;
             width: 24px;
         }
 
         .menu-divider {
             height: 1px;
-            background: var(--border);
+            background: #333;
             margin: 20px 0;
         }
 
         .menu-footer {
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid #333;
             text-align: center;
-            color: var(--text-secondary);
+            color: #8a8d91;
             font-size: 0.7rem;
         }
 
         .sticky-header {
             position: sticky;
             top: 0;
-            background: var(--bg);
+            background: #000;
             z-index: 100;
-            border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            background: rgba(var(--bg-rgb), 0.95);
+            border-bottom: 1px solid #222;
         }
 
         .top-header {
@@ -258,9 +188,8 @@
             align-items: center;
             gap: 5px;
             cursor: pointer;
-            color: var(--text);
         }
-        .logo span { color: var(--accent); }
+        .logo span { color: #fab005; }
 
         .header-right {
             display: flex;
@@ -275,17 +204,17 @@
         }
 
         .desktop-menu a {
-            color: var(--text-secondary);
+            color: #8a8d91;
             text-decoration: none;
             font-size: 0.9rem;
-            transition: var(--transition);
+            transition: all 0.2s ease;
             cursor: pointer;
             padding: 5px 0;
             position: relative;
         }
         
         .desktop-menu a.active {
-            color: var(--accent);
+            color: #fab005;
         }
         
         .desktop-menu a.active::after {
@@ -295,7 +224,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: var(--accent);
+            background: #fab005;
             border-radius: 2px;
             animation: slideIn 0.2s ease;
         }
@@ -312,199 +241,98 @@
         }
 
         .desktop-menu a:hover {
-            color: var(--accent);
+            color: #fab005;
         }
 
         .social-icon {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: var(--surface);
-            border: 1px solid var(--border);
+            background: #1c1f24;
+            border: 1px solid #333;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-secondary);
+            color: #8a8d91;
             font-size: 1.3rem;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.2s ease;
             text-decoration: none;
         }
 
         .social-icon:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--hover);
+            border-color: #fab005;
+            color: #fab005;
+            background: #2a2f38;
         }
 
-        .theme-toggle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 1.3rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--hover);
+        .social-icon.x:hover {
+            border-color: #ffffff;
+            color: #ffffff;
         }
 
         .hamburger-menu {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: var(--surface);
-            border: 1px solid var(--border);
+            background: #1c1f24;
+            border: 1px solid #333;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-secondary);
+            color: #8a8d91;
             font-size: 1.5rem;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.2s ease;
         }
 
         .hamburger-menu:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--hover);
-        }
-
-        .page-header {
-            padding: 15px 20px 5px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--border);
-            max-width: 1200px;
-            margin: 0 auto;
+            border-color: #fab005;
+            color: #fab005;
+            background: #2a2f38;
         }
 
         .page-indicator {
-            color: var(--accent);
+            padding: 15px 20px 5px;
+            color: #fab005;
             font-size: 0.9rem;
             display: flex;
             align-items: center;
             gap: 5px;
-        }
-
-        .refresh-btn {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .refresh-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: rotate(180deg);
-        }
-
-        .search-bar {
+            border-bottom: 1px solid #333;
             max-width: 1200px;
-            margin: 15px auto 0;
-            padding: 0 20px;
+            margin: 0 auto;
         }
 
-        .search-wrapper {
-            background: var(--surface);
-            display: flex;
-            align-items: center;
-            padding: 12px 18px;
+        /* REMOVED: .rss-refresh-btn styles */
+
+        .rss-source-badge {
+            font-size: 0.65rem;
+            color: #fab005;
+            display: inline-block;
+            background: #fab00520;
+            padding: 2px 8px;
             border-radius: 12px;
-            gap: 10px;
-            border: 1px solid var(--border);
-            transition: var(--transition);
-        }
-
-        .search-wrapper:focus-within {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 2px var(--accent-light);
-        }
-
-        .search-icon {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-        }
-
-        .search-input {
-            background: transparent;
-            border: none;
-            color: var(--text);
-            font-size: 0.95rem;
-            width: 100%;
-            outline: none;
-        }
-
-        .search-input::placeholder {
-            color: var(--text-secondary);
-        }
-
-        .category-filters {
-            max-width: 1200px;
-            margin: 15px auto 0;
-            padding: 0 20px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .category-tag {
-            background: var(--surface);
-            padding: 6px 14px;
-            border-radius: 30px;
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .category-tag:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .category-tag.active {
-            background: var(--accent-light);
-            border-color: var(--accent);
-            color: var(--accent);
+            margin: 4px 0;
         }
 
         .loading {
             text-align: center;
             padding: 60px 20px;
-            color: var(--text-secondary);
+            color: #8a8d91;
         }
         
         .loading i {
             font-size: 2.5rem;
             margin-bottom: 15px;
-            color: var(--accent);
+            color: #fab005;
         }
 
         .spinner {
             width: 40px;
             height: 40px;
-            border: 3px solid var(--border);
-            border-top-color: var(--accent);
+            border: 3px solid #333;
+            border-top-color: #fab005;
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 15px;
@@ -531,46 +359,27 @@
         }
 
         .news-card {
-            background: var(--card);
-            border: 1px solid var(--border);
+            background: #15171a;
+            border: 1px solid #222;
             border-radius: 16px;
             overflow: hidden;
-            transition: var(--transition);
+            transition: all 0.2s ease;
             cursor: pointer;
-            opacity: 0;
-            animation: fadeIn 0.5s ease forwards;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
         }
 
         .news-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-color: #fab005;
+            transform: translateY(-2px);
         }
 
         .news-card-image {
             width: 100%;
             height: 180px;
             object-fit: cover;
-            background: var(--surface);
-            transition: transform 0.3s ease;
-        }
-
-        .news-card:hover .news-card-image {
-            transform: scale(1.05);
         }
 
         .news-card-content {
             padding: 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
         }
 
         .news-card-title {
@@ -578,59 +387,42 @@
             font-weight: 600;
             margin-bottom: 10px;
             line-height: 1.4;
-            color: var(--text);
         }
 
         .news-card-description {
-            color: var(--text-secondary);
+            color: #8a8d91;
             font-size: 0.85rem;
             line-height: 1.5;
             margin-bottom: 15px;
-            flex: 1;
         }
 
         .news-card-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: var(--text-secondary);
+            color: #8a8d91;
             font-size: 0.75rem;
-            margin-top: auto;
         }
 
         .news-card-source {
             display: flex;
             align-items: center;
             gap: 5px;
-            background: var(--surface);
+            background: #1e2128;
             padding: 4px 10px;
             border-radius: 20px;
         }
 
         .news-card-source i {
-            color: var(--accent);
+            color: #fab005;
         }
 
         .region-badge {
-            background: var(--accent-light);
-            color: var(--accent);
+            background: #fab00520;
+            color: #fab005;
             padding: 2px 8px;
             border-radius: 12px;
             font-size: 0.65rem;
-        }
-
-        /* No results */
-        .no-results {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-secondary);
-        }
-
-        .no-results i {
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 15px;
         }
 
         /* Explore Page */
@@ -641,31 +433,31 @@
         }
 
         .explore-search-wrapper {
-            background: var(--surface);
+            background: #1c1f24;
             display: flex;
             align-items: center;
             padding: 12px 18px;
             border-radius: 12px;
             gap: 10px;
-            border: 1px solid var(--border);
-            transition: var(--transition);
+            border: 1px solid #333;
+            transition: all 0.2s ease;
             margin-bottom: 25px;
         }
 
         .explore-search-wrapper:focus-within {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 2px var(--accent-light);
+            border-color: #fab005;
+            box-shadow: 0 0 0 2px rgba(250, 176, 5, 0.2);
         }
 
         .explore-search-icon {
-            color: var(--text-secondary);
+            color: #8a8d91;
             font-size: 1.2rem;
         }
 
         .explore-search-input {
             background: transparent;
             border: none;
-            color: var(--text);
+            color: white;
             font-size: 0.95rem;
             width: 100%;
             outline: none;
@@ -679,25 +471,25 @@
         }
 
         .explore-category-tag {
-            background: var(--surface);
+            background: #1e2128;
             padding: 6px 14px;
             border-radius: 30px;
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
+            border: 1px solid #333;
+            color: #8a8d91;
             font-size: 0.8rem;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.2s ease;
         }
 
         .explore-category-tag:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+            border-color: #fab005;
+            color: #fab005;
         }
 
         .explore-category-tag.active {
-            background: var(--accent-light);
-            border-color: var(--accent);
-            color: var(--accent);
+            background: #fab00520;
+            border-color: #fab005;
+            color: #fab005;
         }
 
         .explore-grid {
@@ -716,18 +508,18 @@
         }
 
         .explore-card {
-            background: var(--card);
-            border: 1px solid var(--border);
+            background: #15171a;
+            border: 1px solid #333;
             border-radius: 16px;
             padding: 20px;
-            transition: var(--transition);
+            transition: all 0.2s ease;
             cursor: pointer;
             display: flex;
             flex-direction: column;
         }
 
         .explore-card:hover {
-            border-color: var(--accent);
+            border-color: #fab005;
             transform: translateY(-2px);
         }
 
@@ -741,12 +533,12 @@
         .explore-icon {
             width: 45px;
             height: 45px;
-            background: var(--surface);
+            background: #1e2128;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--accent);
+            color: #fab005;
             font-size: 1.4rem;
         }
 
@@ -754,13 +546,12 @@
             font-size: 1.1rem;
             font-weight: 600;
             flex: 1;
-            color: var(--text);
         }
 
         .explore-category {
             font-size: 0.7rem;
-            color: var(--accent);
-            background: var(--accent-light);
+            color: #fab005;
+            background: #fab00520;
             padding: 4px 12px;
             border-radius: 20px;
             display: inline-block;
@@ -769,7 +560,7 @@
         }
 
         .explore-description {
-            color: var(--text-secondary);
+            color: #8a8d91;
             font-size: 0.85rem;
             line-height: 1.5;
             margin-bottom: 15px;
@@ -777,13 +568,13 @@
         }
 
         .explore-url {
-            color: var(--accent);
+            color: #fab005;
             font-size: 0.75rem;
             word-break: break-all;
             display: flex;
             align-items: center;
             gap: 5px;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid #333;
             padding-top: 12px;
             margin-top: auto;
         }
@@ -793,7 +584,7 @@
             max-width: 1200px;
             margin: 40px auto 0;
             padding: 30px 20px 20px;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid #222;
         }
 
         .footer-grid {
@@ -810,15 +601,15 @@
         }
 
         .newsletter-card {
-            background: var(--surface);
+            background: #15171a;
             border-radius: 20px;
             padding: 25px 20px;
-            border: 1px solid var(--border);
+            border: 1px solid #333;
         }
 
         .newsletter-icon {
             font-size: 2rem;
-            color: var(--accent);
+            color: #fab005;
             margin-bottom: 12px;
         }
 
@@ -826,12 +617,11 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 8px;
-            color: var(--text);
         }
 
         .newsletter-description {
             font-size: 0.85rem;
-            color: var(--text-secondary);
+            color: #8a8d91;
             margin-bottom: 20px;
         }
 
@@ -843,21 +633,21 @@
 
         .newsletter-input {
             flex: 1;
-            background: var(--bg);
-            border: 1px solid var(--border);
+            background: #1c1f24;
+            border: 1px solid #333;
             border-radius: 12px;
             padding: 12px 15px;
-            color: var(--text);
+            color: white;
             outline: none;
             transition: border 0.2s ease;
         }
 
         .newsletter-input:focus {
-            border-color: var(--accent);
+            border-color: #fab005;
         }
 
         .newsletter-button {
-            background: var(--accent);
+            background: #fab005;
             color: #000;
             border: none;
             border-radius: 12px;
@@ -885,25 +675,24 @@
         }
 
         .app-button {
-            background: var(--surface);
-            border: 1px solid var(--border);
+            background: #15171a;
+            border: 1px solid #333;
             border-radius: 30px;
             padding: 10px 25px;
             display: flex;
             align-items: center;
             gap: 8px;
             cursor: pointer;
-            transition: var(--transition);
-            color: var(--text);
+            transition: all 0.2s ease;
         }
 
         .app-button:hover {
-            border-color: var(--accent);
+            border-color: #fab005;
             transform: translateY(-2px);
         }
 
         .download-apk-btn {
-            background: var(--accent);
+            background: #fab005;
             color: #000;
             border: none;
             border-radius: 30px;
@@ -914,7 +703,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            transition: var(--transition);
+            transition: all 0.2s ease;
             margin-top: 20px;
             box-shadow: 0 4px 15px rgba(250, 176, 5, 0.3);
             text-decoration: none;
@@ -933,18 +722,16 @@
             gap: 8px;
             padding: 15px;
             margin: 30px 0 20px;
-            background: var(--surface);
+            background: #15171a;
             border-radius: 30px;
             cursor: pointer;
-            border: 1px solid var(--border);
-            transition: var(--transition);
-            color: var(--text);
+            border: 1px solid #333;
+            transition: all 0.2s ease;
         }
 
         .back-to-top:hover {
-            border-color: var(--accent);
-            background: var(--hover);
-            color: var(--accent);
+            border-color: #fab005;
+            background: #1e2128;
         }
 
         .footer-links {
@@ -952,12 +739,12 @@
             justify-content: center;
             gap: 25px;
             padding: 20px 0;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid #222;
             flex-wrap: wrap;
         }
 
         .footer-link {
-            color: var(--text-secondary);
+            color: #8a8d91;
             text-decoration: none;
             font-size: 0.8rem;
             cursor: pointer;
@@ -965,12 +752,12 @@
         }
 
         .footer-link:hover {
-            color: var(--accent);
+            color: #fab005;
         }
 
         .copyright {
             text-align: center;
-            color: var(--text-secondary);
+            color: #8a8d91;
             font-size: 0.7rem;
             padding: 10px 0;
         }
@@ -989,7 +776,7 @@
             z-index: 2000;
             opacity: 0;
             visibility: hidden;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
 
         .popup-overlay.show {
@@ -998,13 +785,13 @@
         }
 
         .popup-content {
-            background: var(--surface);
+            background: #15171a;
             border-radius: 20px;
             padding: 30px;
             max-width: 400px;
             width: 90%;
             text-align: center;
-            border: 1px solid var(--border);
+            border: 1px solid #444;
             transform: scale(0.9);
             transition: transform 0.3s ease;
         }
@@ -1015,7 +802,7 @@
 
         .popup-icon {
             font-size: 2.5rem;
-            color: var(--accent);
+            color: #fab005;
             margin-bottom: 15px;
         }
 
@@ -1023,16 +810,15 @@
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 10px;
-            color: var(--text);
         }
 
         .popup-message {
-            color: var(--text-secondary);
+            color: #8a8d91;
             margin-bottom: 20px;
         }
 
         .popup-button {
-            background: var(--accent);
+            background: #fab005;
             color: #000;
             border: none;
             padding: 12px 30px;
@@ -1048,40 +834,12 @@
 
         .apk-size {
             font-size: 0.8rem;
-            color: var(--text-secondary);
+            color: #8a8d91;
             margin-top: 5px;
-        }
-
-        /* Skeleton loading */
-        .skeleton {
-            background: linear-gradient(90deg, var(--surface) 25%, var(--hover) 50%, var(--surface) 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        .offline-banner {
-            background: #ff5252;
-            color: white;
-            text-align: center;
-            padding: 8px;
-            font-size: 0.85rem;
-            position: sticky;
-            top: 0;
-            z-index: 1001;
         }
     </style>
 </head>
 <body>
-    <!-- Offline banner (hidden by default) -->
-    <div id="offlineBanner" class="offline-banner" style="display: none;">
-        <i class="ph ph-wifi-slash"></i> You are offline. Showing cached content.
-    </div>
-
     <div class="app-container">
         <!-- Slide-out Menu -->
         <div class="menu-overlay" id="menuOverlay"></div>
@@ -1137,7 +895,7 @@
                 </div>
             </div>
 
-            <!-- LYTEIT Section -->
+            <!-- NEW: LYTEIT Section -->
             <div class="menu-section">
                 <div class="menu-section-title">LYTEIT</div>
                 <div class="menu-item" onclick="window.open('https://lyteit.blogspot.com', '_blank')">
@@ -1167,16 +925,10 @@
                 </div>
 
                 <div class="header-right">
-                    <!-- Theme Toggle -->
-                    <div class="theme-toggle" id="themeToggle" title="Toggle theme">
-                        <i class="ph ph-sun" id="themeIcon"></i>
-                    </div>
-                    
-                    <!-- X (Twitter) Icon -->
+                    <!-- X (Twitter) Icon - UPDATED LINK -->
                     <a href="https://x.com/LyteitNigeria" target="_blank" class="social-icon x">
                         <i class="ph-fill ph-x-logo"></i>
                     </a>
-                    
                     <!-- Hamburger Menu -->
                     <div class="hamburger-menu" id="hamburgerMenu">
                         <i class="ph ph-list"></i>
@@ -1185,38 +937,19 @@
             </div>
         </div>
 
-        <!-- Page Header with Refresh -->
-        <div class="page-header" id="pageHeader">
-            <div class="page-indicator" id="pageIndicator">
-                <i class="ph ph-house"></i> Home
-            </div>
-            <div class="refresh-btn" id="refreshBtn" title="Refresh news">
-                <i class="ph ph-arrow-clockwise"></i>
-            </div>
-        </div>
-
-        <!-- Search Bar (Home page) -->
-        <div class="search-bar" id="homeSearch">
-            <div class="search-wrapper">
-                <i class="ph ph-magnifying-glass search-icon"></i>
-                <input type="text" class="search-input" id="newsSearch" placeholder="Search news by title, source, or region...">
-            </div>
-        </div>
-
-        <!-- Category Filters (Home page) -->
-        <div class="category-filters" id="homeCategories">
-            <span class="category-tag active" data-category="all">All News</span>
-            <span class="category-tag" data-category="global">🌍 Global</span>
-            <span class="category-tag" data-category="nigeria">🇳🇬 Nigeria</span>
-            <span class="category-tag" data-category="crypto">💰 Crypto</span>
-            <span class="category-tag" data-category="finance">📈 Finance</span>
+        <!-- Page Indicator - REFRESH BUTTON REMOVED -->
+        <div class="page-indicator" id="pageIndicator">
+            <i class="ph ph-house"></i> Home
         </div>
 
         <!-- Main Content Area -->
         <div id="home-page">
             <!-- News Grid -->
             <div class="news-grid" id="newsGrid">
-                <!-- Skeleton loading will be shown here -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    Loading latest news...
+                </div>
             </div>
         </div>
 
@@ -1240,7 +973,7 @@
             </div>
         </div>
 
-        <!-- Footer Section -->
+        <!-- Footer Section (always visible) -->
         <div class="footer-section">
             <div class="footer-grid">
                 <div class="newsletter-card">
@@ -1256,7 +989,7 @@
                 </div>
 
                 <div class="app-promo">
-                    <h3 style="margin-bottom: 10px; color: var(--text);">Download Our App</h3>
+                    <h3 style="margin-bottom: 10px;">Download Our App</h3>
                     <div class="app-buttons">
                         <div class="app-button" id="appStoreBtn">
                             <i class="ph-fill ph-apple-logo"></i>
@@ -1306,26 +1039,11 @@
 
     <script>
         // ============================================
-        // APP STATE & CONFIGURATION
+        // APP STATE
         // ============================================
-        const APP_VERSION = '2.0.0';
-        const CACHE_KEYS = {
-            NEWS: 'lyteit_news_cache',
-            TIMESTAMP: 'lyteit_cache_timestamp',
-            THEME: 'lyteit_theme'
-        };
-        const CACHE_DURATION = 15 * 60 * 1000; // 15 minutes
-
         let currentPage = 'home';
         let allRssPosts = [];
-        let filteredPosts = [];
-        let currentCategory = 'all';
-        let currentSearchTerm = '';
         let exploreCategory = 'all';
-        let isOnline = navigator.onLine;
-        let newsRefreshInProgress = false;
-
-        // Explore Resources
         const exploreResources = [
             { name: "CoinTelegraph", description: "Latest cryptocurrency news and analysis.", url: "https://cointelegraph.com", category: "news", icon: "ph-lightning" },
             { name: "CoinMarketCap", description: "Live cryptocurrency prices, charts, and market data.", url: "https://coinmarketcap.com", category: "data", icon: "ph-chart-line" },
@@ -1338,226 +1056,113 @@
             { name: "CoinBureau", description: "In-depth crypto reviews and market analysis videos.", url: "https://youtube.com/@coinbureau", category: "video", icon: "ph-youtube-logo" },
             { name: "Bankless", description: "DeFi and crypto culture discussions with industry leaders.", url: "https://bankless.com", category: "video", icon: "ph-headphones" },
             { name: "Bloomberg Markets", description: "Financial news coverage and market analysis.", url: "https://bloomberg.com/markets", category: "video", icon: "ph-youtube-logo" },
-            { name: "Nairametrics", description: "Nigerian business and financial news.", url: "https://nairametrics.com", category: "news", icon: "ph-flag" },
-            { name: "Binance Academy", description: "Free cryptocurrency education and guides.", url: "https://academy.binance.com", category: "education", icon: "ph-graduation-cap" },
-            { name: "DeFi Pulse", description: "DeFi project rankings and analytics.", url: "https://defipulse.com", category: "data", icon: "ph-chart-line" },
-            { name: "Messari", description: "Crypto research and data platform.", url: "https://messari.io", category: "data", icon: "ph-chart-line" }
+            { name: "Nairametrics", description: "Nigerian business and financial news.", url: "https://nairametrics.com", category: "news", icon: "ph-flag" }
         ];
 
-        // RSS FEEDS
+        // RSS FEEDS - 10 per feed
         const RSS_FEEDS = [
             {
                 name: 'CoinTelegraph',
                 url: 'https://cointelegraph.com/rss',
                 region: 'global',
-                icon: 'ph-lightning',
-                category: 'crypto'
+                icon: 'ph-lightning'
             },
             {
                 name: 'Bitcoin Magazine',
                 url: 'https://bitcoinmagazine.com/feed',
                 region: 'global',
-                icon: 'ph-bitcoin-logo',
-                category: 'crypto'
+                icon: 'ph-bitcoin-logo'
             },
             {
                 name: 'Lyteit Blog',
                 url: 'https://lyteit.blogspot.com/feeds/posts/default?alt=rss',
                 region: 'nigeria',
-                icon: 'ph-lightning',
-                category: 'finance'
+                icon: 'ph-lightning'
             },
             {
                 name: 'Invezz Crypto',
                 url: 'https://invezz.com/news/cryptocurrency/feed/',
                 region: 'global',
-                icon: 'ph-trend-up',
-                category: 'crypto'
+                icon: 'ph-trend-up'
             },
             {
                 name: 'The Daily Hodl',
                 url: 'https://dailyhodl.com/feed/',
                 region: 'global',
-                icon: 'ph-clock',
-                category: 'crypto'
+                icon: 'ph-clock'
             },
             {
                 name: 'CoinDesk',
                 url: 'https://feeds.feedburner.com/CoinDesk',
                 region: 'global',
-                icon: 'ph-broadcast',
-                category: 'crypto'
+                icon: 'ph-broadcast'
             }
         ];
 
         // ============================================
-        // SERVICE WORKER REGISTRATION
+        // INITIALIZATION
         // ============================================
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').then(registration => {
-                    console.log('ServiceWorker registered:', registration.scope);
-                }).catch(error => {
-                    console.log('ServiceWorker registration failed:', error);
-                });
-            });
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            setupMenu();
+            setupEventListeners();
+            loadRssFeeds();
+            renderExploreContent();
+        });
 
         // ============================================
-        // ONLINE/OFFLINE DETECTION
+        // MENU FUNCTIONS
         // ============================================
-        window.addEventListener('online', updateOnlineStatus);
-        window.addEventListener('offline', updateOnlineStatus);
+        function setupMenu() {
+            const hamburger = document.getElementById('hamburgerMenu');
+            const closeBtn = document.getElementById('closeMenu');
+            const overlay = document.getElementById('menuOverlay');
+            const menu = document.getElementById('slideMenu');
 
-        function updateOnlineStatus() {
-            isOnline = navigator.onLine;
-            const banner = document.getElementById('offlineBanner');
-            if (banner) {
-                banner.style.display = isOnline ? 'none' : 'block';
-            }
-            
-            if (isOnline && allRssPosts.length === 0) {
-                loadRssFeeds(true); // Force refresh when coming online
-            }
-        }
-
-        // ============================================
-        // THEME MANAGEMENT
-        // ============================================
-        function initTheme() {
-            const savedTheme = localStorage.getItem(CACHE_KEYS.THEME);
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-theme');
-                document.getElementById('themeIcon').className = 'ph ph-moon';
-            } else if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-                document.body.classList.remove('light-theme');
-                document.getElementById('themeIcon').className = 'ph ph-sun';
-            } else {
-                document.body.classList.remove('light-theme');
-                document.getElementById('themeIcon').className = 'ph ph-sun';
-            }
-        }
-
-        function toggleTheme() {
-            if (document.body.classList.contains('light-theme')) {
-                document.body.classList.remove('light-theme');
-                localStorage.setItem(CACHE_KEYS.THEME, 'dark');
-                document.getElementById('themeIcon').className = 'ph ph-sun';
-            } else {
-                document.body.classList.add('light-theme');
-                localStorage.setItem(CACHE_KEYS.THEME, 'light');
-                document.getElementById('themeIcon').className = 'ph ph-moon';
-            }
-        }
-
-        // ============================================
-        // CACHE MANAGEMENT
-        // ============================================
-        function saveToCache(data) {
-            try {
-                const cacheData = {
-                    posts: data,
-                    timestamp: Date.now()
-                };
-                localStorage.setItem(CACHE_KEYS.NEWS, JSON.stringify(cacheData));
-            } catch (error) {
-                console.error('Error saving to cache:', error);
-            }
-        }
-
-        function loadFromCache() {
-            try {
-                const cached = localStorage.getItem(CACHE_KEYS.NEWS);
-                if (!cached) return null;
-                
-                const { posts, timestamp } = JSON.parse(cached);
-                const age = Date.now() - timestamp;
-                
-                // Return cached data even if expired (for offline use)
-                return {
-                    posts,
-                    isValid: age < CACHE_DURATION,
-                    age
-                };
-            } catch (error) {
-                console.error('Error loading from cache:', error);
-                return null;
-            }
-        }
-
-        // ============================================
-        // SKELETON LOADING
-        // ============================================
-        function showSkeletonLoading() {
-            const newsGrid = document.getElementById('newsGrid');
-            const skeletons = Array(6).fill(0).map(() => `
-                <div class="news-card" style="pointer-events: none;">
-                    <div class="skeleton" style="height: 180px; width: 100%;"></div>
-                    <div class="news-card-content">
-                        <div class="skeleton" style="height: 20px; width: 80%; margin-bottom: 10px;"></div>
-                        <div class="skeleton" style="height: 15px; width: 100%; margin-bottom: 5px;"></div>
-                        <div class="skeleton" style="height: 15px; width: 90%; margin-bottom: 15px;"></div>
-                        <div class="news-card-meta">
-                            <div class="skeleton" style="height: 24px; width: 100px;"></div>
-                            <div class="skeleton" style="height: 20px; width: 60px;"></div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-            
-            newsGrid.innerHTML = skeletons;
-        }
-
-        // ============================================
-        // LAZY LOADING IMAGES
-        // ============================================
-        function setupLazyLoading() {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        img.classList.add('loaded');
-                        observer.unobserve(img);
-                    }
-                });
+            hamburger.addEventListener('click', () => {
+                overlay.classList.add('active');
+                menu.classList.add('active');
+                document.body.style.overflow = 'hidden';
             });
 
-            images.forEach(img => imageObserver.observe(img));
+            function closeMenu() {
+                overlay.classList.remove('active');
+                menu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            closeBtn.addEventListener('click', closeMenu);
+            overlay.addEventListener('click', closeMenu);
         }
+
+        // ============================================
+        // PAGE NAVIGATION
+        // ============================================
+        window.switchPage = function(page) {
+            currentPage = page;
+            
+            // Update navigation
+            document.getElementById('nav-home').classList.toggle('active', page === 'home');
+            document.getElementById('nav-explore').classList.toggle('active', page === 'explore');
+            
+            // Update page indicator - REFRESH BUTTON REMOVED
+            const indicator = document.getElementById('pageIndicator');
+            if (page === 'home') {
+                indicator.innerHTML = '<i class="ph ph-house"></i> Home';
+                document.getElementById('home-page').style.display = 'block';
+                document.getElementById('explore-page').style.display = 'none';
+                // No refresh button to set up
+            } else {
+                indicator.innerHTML = '<i class="ph ph-compass"></i> Explore';
+                document.getElementById('home-page').style.display = 'none';
+                document.getElementById('explore-page').style.display = 'block';
+            }
+        };
 
         // ============================================
         // RSS FUNCTIONS
         // ============================================
-        async function loadRssFeeds(forceRefresh = false) {
+        async function loadRssFeeds() {
             const newsGrid = document.getElementById('newsGrid');
-            
-            // Show skeleton loading
-            showSkeletonLoading();
-            
-            // Try to load from cache first
-            const cached = loadFromCache();
-            
-            if (cached && cached.posts.length > 0) {
-                allRssPosts = cached.posts;
-                applyFiltersAndRender();
-                
-                // If cache is valid and not forcing refresh, don't fetch
-                if (cached.isValid && !forceRefresh) {
-                    return;
-                }
-            }
-            
-            // If offline, just use cache
-            if (!isOnline) {
-                if (!cached) {
-                    newsGrid.innerHTML = '<div class="no-results"><i class="ph ph-wifi-slash"></i><h3>You are offline</h3><p>No cached news available. Please connect to the internet.</p></div>';
-                }
-                return;
-            }
             
             try {
                 const allArticles = [];
@@ -1588,31 +1193,14 @@
                                 
                                 const content = item.description ? item.description.replace(/<[^>]*>/g, '').substring(0, 150) : '';
                                 
-                                // Determine category based on content
-                                let category = feed.category || 'crypto';
-                                const titleLower = (item.title || '').toLowerCase();
-                                const contentLower = content.toLowerCase();
-                                
-                                if (titleLower.includes('bitcoin') || titleLower.includes('btc')) {
-                                    category = 'crypto';
-                                } else if (titleLower.includes('ethereum') || titleLower.includes('eth')) {
-                                    category = 'crypto';
-                                } else if (titleLower.includes('stock') || titleLower.includes('market') || titleLower.includes('invest')) {
-                                    category = 'finance';
-                                } else if (titleLower.includes('nigeria') || titleLower.includes('naira') || feed.region === 'nigeria') {
-                                    category = 'finance';
-                                }
-                                
                                 return {
                                     title: item.title || 'No title',
                                     content: content + (content.length >= 150 ? '...' : ''),
                                     image: image || 'https://images.unsplash.com/photo-1621761126064-fdd80772bc22?w=400',
                                     source: feed.name,
                                     region: feed.region,
-                                    category: category,
                                     link: item.link,
-                                    date: item.pubDate,
-                                    guid: item.guid || item.link
+                                    date: item.pubDate
                                 };
                             });
                         }
@@ -1624,103 +1212,39 @@
                 });
                 
                 const results = await Promise.all(feedPromises);
-                const newPosts = results.flat().sort((a, b) => new Date(b.date) - new Date(a.date));
+                allRssPosts = results.flat().sort((a, b) => new Date(b.date) - new Date(a.date));
                 
-                if (newPosts.length > 0) {
-                    allRssPosts = newPosts;
-                    saveToCache(allRssPosts);
-                    applyFiltersAndRender();
+                if (allRssPosts.length === 0) {
+                    newsGrid.innerHTML = '<div class="loading">Unable to load news. Please try refreshing the page.</div>';
+                } else {
+                    renderNewsGrid(allRssPosts);
                 }
                 
             } catch (error) {
                 console.error('Error loading RSS feeds:', error);
-                if (allRssPosts.length === 0) {
-                    newsGrid.innerHTML = '<div class="no-results"><i class="ph ph-warning-circle"></i><h3>Failed to load news</h3><p>Please refresh the page or try again later.</p><button class="category-tag" onclick="loadRssFeeds(true)" style="margin-top: 15px;">Retry</button></div>';
-                }
+                newsGrid.innerHTML = '<div class="loading" style="color: #ff5252;">Failed to load news. Please refresh the page.</div>';
             }
-        }
-
-        // ============================================
-        // FILTERING & SEARCH
-        // ============================================
-        function applyFiltersAndRender() {
-            let filtered = [...allRssPosts];
-            
-            // Apply category filter
-            if (currentCategory !== 'all') {
-                filtered = filtered.filter(post => post.category === currentCategory || post.region === currentCategory);
-            }
-            
-            // Apply search
-            if (currentSearchTerm) {
-                const term = currentSearchTerm.toLowerCase();
-                filtered = filtered.filter(post => 
-                    post.title.toLowerCase().includes(term) ||
-                    post.source.toLowerCase().includes(term) ||
-                    post.content.toLowerCase().includes(term) ||
-                    post.region.toLowerCase().includes(term)
-                );
-            }
-            
-            filteredPosts = filtered;
-            renderNewsGrid(filteredPosts);
         }
 
         function renderNewsGrid(posts) {
             const newsGrid = document.getElementById('newsGrid');
             
-            if (posts.length === 0) {
-                newsGrid.innerHTML = `
-                    <div class="no-results">
-                        <i class="ph ph-magnifying-glass"></i>
-                        <h3>No news found</h3>
-                        <p>Try adjusting your search or filters</p>
-                        <button class="category-tag" onclick="resetFilters()" style="margin-top: 15px;">Reset Filters</button>
-                    </div>
-                `;
-                return;
-            }
-            
-            newsGrid.innerHTML = posts.map((post, index) => `
-                <div class="news-card" onclick="window.open('${post.link}', '_blank')" style="animation-delay: ${index * 0.05}s">
-                    <img data-src="${post.image}" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='180' viewBox='0 0 400 180'%3E%3Crect width='400' height='180' fill='%2315171a'/%3E%3C/svg%3E" 
-                         class="news-card-image" loading="lazy" 
-                         onerror="this.src='https://images.unsplash.com/photo-1621761126064-fdd80772bc22?w=400'">
+            newsGrid.innerHTML = posts.map(post => `
+                <div class="news-card" onclick="window.open('${post.link}', '_blank')">
+                    <img src="${post.image}" class="news-card-image" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1621761126064-fdd80772bc22?w=400'">
                     <div class="news-card-content">
-                        <h3 class="news-card-title">${escapeHtml(post.title)}</h3>
-                        <p class="news-card-description">${escapeHtml(post.content)}</p>
+                        <h3 class="news-card-title">${post.title}</h3>
+                        <p class="news-card-description">${post.content}</p>
                         <div class="news-card-meta">
                             <span class="news-card-source">
                                 <i class="ph ${post.region === 'nigeria' ? 'ph-flag' : 'ph-newspaper'}"></i>
-                                ${escapeHtml(post.source)}
+                                ${post.source}
                             </span>
                             <span class="region-badge">${post.region === 'nigeria' ? '🇳🇬 Nigeria' : '🌍 Global'}</span>
                         </div>
                     </div>
                 </div>
             `).join('');
-            
-            // Setup lazy loading for new images
-            setupLazyLoading();
-        }
-
-        // Simple XSS prevention
-        function escapeHtml(unsafe) {
-            return unsafe
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
-        }
-
-        function resetFilters() {
-            currentCategory = 'all';
-            currentSearchTerm = '';
-            document.getElementById('newsSearch').value = '';
-            document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
-            document.querySelector('.category-tag[data-category="all"]').classList.add('active');
-            applyFiltersAndRender();
         }
 
         // ============================================
@@ -1739,7 +1263,7 @@
             });
             
             if (filtered.length === 0) {
-                grid.innerHTML = '<div class="no-results"><i class="ph ph-compass"></i><h3>No resources found</h3><p>Try a different search term or category</p></div>';
+                grid.innerHTML = '<div class="loading">No resources found</div>';
                 return;
             }
             
@@ -1747,10 +1271,10 @@
                 <div class="explore-card" onclick="window.open('${item.url}','_blank')">
                     <div class="explore-card-header">
                         <div class="explore-icon"><i class="ph ${item.icon}"></i></div>
-                        <div class="explore-name">${escapeHtml(item.name)}</div>
+                        <div class="explore-name">${item.name}</div>
                     </div>
                     <span class="explore-category">${item.category}</span>
-                    <div class="explore-description">${escapeHtml(item.description)}</div>
+                    <div class="explore-description">${item.description}</div>
                     <div class="explore-url">
                         <i class="ph ph-link"></i>
                         ${item.url.replace('https://', '').replace('http://', '')}
@@ -1758,39 +1282,6 @@
                 </div>
             `).join('');
         }
-
-        // ============================================
-        // PAGE NAVIGATION
-        // ============================================
-        window.switchPage = function(page) {
-            currentPage = page;
-            
-            // Update navigation
-            document.getElementById('nav-home').classList.toggle('active', page === 'home');
-            document.getElementById('nav-explore').classList.toggle('active', page === 'explore');
-            
-            // Update page indicator
-            const indicator = document.getElementById('pageIndicator');
-            const homeSearch = document.getElementById('homeSearch');
-            const homeCategories = document.getElementById('homeCategories');
-            const refreshBtn = document.getElementById('refreshBtn');
-            
-            if (page === 'home') {
-                indicator.innerHTML = '<i class="ph ph-house"></i> Home';
-                homeSearch.style.display = 'block';
-                homeCategories.style.display = 'flex';
-                refreshBtn.style.display = 'flex';
-                document.getElementById('home-page').style.display = 'block';
-                document.getElementById('explore-page').style.display = 'none';
-            } else {
-                indicator.innerHTML = '<i class="ph ph-compass"></i> Explore';
-                homeSearch.style.display = 'none';
-                homeCategories.style.display = 'none';
-                refreshBtn.style.display = 'none';
-                document.getElementById('home-page').style.display = 'none';
-                document.getElementById('explore-page').style.display = 'block';
-            }
-        };
 
         // ============================================
         // POPUP FUNCTIONS
@@ -1802,56 +1293,9 @@
         }
 
         // ============================================
-        // STRUCTURED DATA FOR SEO
-        // ============================================
-        function addStructuredData() {
-            const structuredData = {
-                "@context": "https://schema.org",
-                "@type": "NewsMediaOrganization",
-                "name": "lyteit.com",
-                "url": "https://lyteit.com",
-                "logo": "https://lyteit.com/logo.png",
-                "sameAs": [
-                    "https://x.com/LyteitNigeria"
-                ],
-                "description": "Latest cryptocurrency and financial news from trusted sources around the world.",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressCountry": "NG"
-                }
-            };
-            
-            const script = document.createElement('script');
-            script.type = 'application/ld+json';
-            script.text = JSON.stringify(structuredData);
-            document.head.appendChild(script);
-            
-            // Add WebSite structured data
-            const websiteData = {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "name": "lyteit.com",
-                "url": "https://lyteit.com",
-                "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "https://lyteit.com/?search={search_term_string}",
-                    "query-input": "required name=search_term_string"
-                }
-            };
-            
-            const websiteScript = document.createElement('script');
-            websiteScript.type = 'application/ld+json';
-            websiteScript.text = JSON.stringify(websiteData);
-            document.head.appendChild(websiteScript);
-        }
-
-        // ============================================
         // EVENT LISTENERS
         // ============================================
         function setupEventListeners() {
-            // Theme toggle
-            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-            
             // Back to top
             document.getElementById('backToTop').addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1860,21 +1304,6 @@
             // Logo click
             document.getElementById('logo').addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            
-            // Refresh button
-            document.getElementById('refreshBtn').addEventListener('click', () => {
-                if (!newsRefreshInProgress) {
-                    newsRefreshInProgress = true;
-                    const refreshBtn = document.getElementById('refreshBtn');
-                    refreshBtn.style.transform = 'rotate(180deg)';
-                    loadRssFeeds(true).finally(() => {
-                        setTimeout(() => {
-                            refreshBtn.style.transform = '';
-                            newsRefreshInProgress = false;
-                        }, 500);
-                    });
-                }
             });
             
             // Close popup
@@ -1890,12 +1319,7 @@
 
             // Newsletter
             document.getElementById('subscribeBtn').addEventListener('click', () => {
-                const email = document.getElementById('newsletterEmail').value;
-                if (email && email.includes('@')) {
-                    showPopup('Newsletter Subscription');
-                } else {
-                    alert('Please enter a valid email address');
-                }
+                showPopup('Newsletter');
             });
 
             // App buttons
@@ -1905,25 +1329,6 @@
 
             document.getElementById('playStoreBtn').addEventListener('click', () => {
                 showPopup('Google Play');
-            });
-
-            // Home search
-            const newsSearch = document.getElementById('newsSearch');
-            if (newsSearch) {
-                newsSearch.addEventListener('input', debounce((e) => {
-                    currentSearchTerm = e.target.value.toLowerCase();
-                    applyFiltersAndRender();
-                }, 300));
-            }
-
-            // Home categories
-            document.querySelectorAll('.category-tag').forEach(tag => {
-                tag.addEventListener('click', () => {
-                    document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
-                    tag.classList.add('active');
-                    currentCategory = tag.dataset.category;
-                    applyFiltersAndRender();
-                });
             });
 
             // Explore search
@@ -1945,31 +1350,6 @@
                     renderExploreContent(exploreCategory, searchTerm);
                 });
             });
-
-            // Menu
-            setupMenu();
-        }
-
-        function setupMenu() {
-            const hamburger = document.getElementById('hamburgerMenu');
-            const closeBtn = document.getElementById('closeMenu');
-            const overlay = document.getElementById('menuOverlay');
-            const menu = document.getElementById('slideMenu');
-
-            hamburger.addEventListener('click', () => {
-                overlay.classList.add('active');
-                menu.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-
-            function closeMenu() {
-                overlay.classList.remove('active');
-                menu.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-
-            closeBtn.addEventListener('click', closeMenu);
-            overlay.addEventListener('click', closeMenu);
         }
 
         // Debounce utility
@@ -1984,103 +1364,6 @@
                 timeout = setTimeout(later, wait);
             };
         }
-
-        // ============================================
-        // SERVICE WORKER CODE (injected)
-        // ============================================
-        function registerServiceWorker() {
-            const swCode = `
-                const CACHE_NAME = 'lyteit-v2';
-                const urlsToCache = [
-                    '/',
-                    'https://unpkg.com/@phosphor-icons/web',
-                    'https://images.unsplash.com/photo-1621761126064-fdd80772bc22?w=400'
-                ];
-
-                self.addEventListener('install', event => {
-                    event.waitUntil(
-                        caches.open(CACHE_NAME)
-                            .then(cache => cache.addAll(urlsToCache))
-                    );
-                });
-
-                self.addEventListener('fetch', event => {
-                    event.respondWith(
-                        caches.match(event.request)
-                            .then(response => {
-                                if (response) {
-                                    return response;
-                                }
-                                return fetch(event.request).then(
-                                    response => {
-                                        if(!response || response.status !== 200 || response.type !== 'basic') {
-                                            return response;
-                                        }
-                                        const responseToCache = response.clone();
-                                        caches.open(CACHE_NAME)
-                                            .then(cache => {
-                                                cache.put(event.request, responseToCache);
-                                            });
-                                        return response;
-                                    }
-                                );
-                            })
-                    );
-                });
-
-                self.addEventListener('activate', event => {
-                    const cacheWhitelist = [CACHE_NAME];
-                    event.waitUntil(
-                        caches.keys().then(cacheNames => {
-                            return Promise.all(
-                                cacheNames.map(cacheName => {
-                                    if (cacheWhitelist.indexOf(cacheName) === -1) {
-                                        return caches.delete(cacheName);
-                                    }
-                                })
-                            );
-                        })
-                    );
-                });
-            `;
-            
-            const blob = new Blob([swCode], { type: 'application/javascript' });
-            const swUrl = URL.createObjectURL(blob);
-            
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register(swUrl).then(registration => {
-                    console.log('ServiceWorker registered');
-                }).catch(error => {
-                    console.log('ServiceWorker registration failed:', error);
-                });
-            }
-        }
-
-        // ============================================
-        // INITIALIZATION
-        // ============================================
-        document.addEventListener('DOMContentLoaded', () => {
-            // Add structured data
-            addStructuredData();
-            
-            // Initialize theme
-            initTheme();
-            
-            // Setup event listeners
-            setupEventListeners();
-            
-            // Register service worker
-            registerServiceWorker();
-            
-            // Load RSS feeds
-            loadRssFeeds();
-            
-            // Render explore content
-            renderExploreContent();
-            
-            // Check online status
-            updateOnlineStatus();
-        });
     </script>
 </body>
 </html>
